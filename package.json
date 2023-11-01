@@ -35,6 +35,8 @@
     "react-component"
   ],
   "dependencies": {
-    "ajv": "^6.12.6"
+    "@react-three/fiber": "^8.15.9",
+    "ajv": "^6.12.6",
+    "three": "^0.158.0"
   }
 }
