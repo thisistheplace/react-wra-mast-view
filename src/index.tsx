@@ -1,3 +1,4 @@
+import 'bootswatch/dist/yeti/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

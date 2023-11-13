@@ -1,43 +1,45 @@
 import React, {useEffect, useRef} from 'react'
-import { JSONEditor, JSONSchema, JSONEditorPropsOptional } from 'vanilla-jsoneditor'
-import { createAjvValidator } from 'vanilla-jsoneditor'
+// import { createPrecompiledValidator, ValidatorFunctions } from '@rjsf/validator-ajv8'
+// import Form from '@rjsf/core'; // Or whatever theme you use
 
+import schema from './schema/iea43_wra_data_model.schema.json'
+// import * as precompiledValidator from './schema/wra_datamodel'
 
-export const SvelteJSONEditor = ({schema, props} : {schema: JSONSchema, props: JSONEditorPropsOptional}) => {
+export const JSONEditor = ({json} : {json: object}) => {
+
   const refContainer = useRef<HTMLDivElement>(null);
-  const refEditor = useRef<null | JSONEditor>(null);
+  const refValidator = useRef<null | any>(null);
 
   useEffect(() => {
     // create editor
     if (refContainer.current){
-      refEditor.current = new JSONEditor({
-        target: refContainer.current,
-        props: {
-        }
-      })
+      let a = 1
+      // refValidator.current = createPrecompiledValidator(precompiledValidator as ValidatorFunctions, schema)
     }
 
     return () => {
       // destroy editor
-      if (refEditor.current) {
-        refEditor.current.destroy();
-        refEditor.current = null;
+      if (refValidator.current) {
+        refValidator.current.destroy();
+        refValidator.current = null;
       }
     };
-  }, [schema]);
+  }, []);
 
   // update props
   useEffect(() => {
-    const fullProps = { ...props }
+    // const fullProps = { ...props }
     console.log(schema)
-    if (props.content){
-      fullProps.validator = createAjvValidator({ schema })
-    }
-    if (refEditor.current) {
-      const fullProps = { validator: createAjvValidator({ schema }), ...props}
-      refEditor.current.updateProps(fullProps)
-    }
-  }, [props, schema]);
+    // console.log(props)
+    // if (props.content){
+    //   fullProps.validator = createAjvValidator({ schema })
+    // }
+    // if (refValidator.current) {
+    //   const fullProps = { validator: createAjvValidator({ schema }), ...props}
+    //   refValidator.current.updateProps(fullProps)
+    // }
+  }, [json]);
 
-  return <div className="vanilla-jsoneditor-react" ref={refContainer}></div>;
+  // return <Form schema={schema} formData={json} validator={refValidator} ref={refContainer}></Form>
+  return <div></div>
 }

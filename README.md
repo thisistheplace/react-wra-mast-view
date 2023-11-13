@@ -17,6 +17,20 @@ React component to render IEA Task 43 mast data.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Compile JSON Schema using AJV
+Validation of JSON against JSON Schema is completed using [AJV](https://ajv.js.org/). For
+efficiency and simplicity the WRA schema is precomplied using the approach described below.
+This approach seems reasonable since it is expected that the WRA schema will be updated 
+relatively infrequently and this package can be updated manually to ensure alignment.
+
+To update the schema validation functions run the following script from the top level 
+directory:
+
+```node src/jsoneditor/schema/compileSchema.js```
+
+This will update the file 'src/jsoneditor/schema/wra_datamodel.js'. Strict mode warnings
+are logged to the console.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,4 +1,3 @@
-import React from 'react'
 import { JsonInput } from './jsoneditor'
 import { Container } from 'react-bootstrap';
 
