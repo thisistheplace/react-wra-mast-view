@@ -20,7 +20,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Compile JSON Schema using AJV
 
-**Note that the schema cannot currently be 
+**Note that the schema cannot currently be used for validation using AJV due to circular
+referencing!!!**
 
 Validation of JSON against JSON Schema is completed using [AJV](https://ajv.js.org/). For
 efficiency and simplicity the WRA schema is precomplied using the approach described below.
