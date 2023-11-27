@@ -18,7 +18,13 @@ IEA43 WRA schema found [here](https://github.com/IEA-Task-43/digital_wra_data_st
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Compile JSON Schema using AJV
+
+## Schema Validation
+The use of $Refs in the JSON schema seems to prevent [AJV](https://ajv.js.org/) being
+used to validate JSON files against the JSON schema. Validation should be performed
+outside of this component.
+
+### Compile JSON Schema using AJV
 
 **Note that the schema cannot currently be used for validation using AJV due to circular
 referencing!!!**
@@ -31,7 +37,7 @@ relatively infrequently and this package can be updated manually to ensure align
 To update the schema validation functions run the following script from the top level 
 directory:
 
-```node src/jsoneditor/schema/compileSchema.js```
+```node src/schema/compileSchema.js```
 
 This will update the file 'src/jsoneditor/schema/wra_datamodel.js'. Strict mode warnings
 are logged to the console.

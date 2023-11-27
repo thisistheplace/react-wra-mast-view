@@ -1,4 +1,3 @@
-import { JsonInput } from './jsoneditor'
 import { Container } from 'react-bootstrap';
 
 export interface WraMastViewProps {
@@ -9,7 +8,7 @@ export interface WraMastViewProps {
 const WraMastView = ({editor, json}: WraMastViewProps) => {
   return(
     <Container className="vh-100 px-0" fluid={true} data-bs-theme="light">
-      {editor && <JsonInput jsonInput={json}/>}
+      <h1>Hi</h1>
     </Container>
   )
 }
