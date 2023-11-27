@@ -13,13 +13,13 @@ let mySchema = require('./iea43_wra_data_model.schema.json')
 // schema into precompiled validation functions
 // The generated code will have a default export:
 // `module.exports = <validateFunctionCode>;module.exports.default = <validateFunctionCode>;`
-// deref(mySchema, function(err, fullSchema) {
-  // console.log(fullSchema)
-  // const ajv = new Ajv({code: {source: true}, strict: "log"})
-  // addFormats(ajv)
-  // const validate = ajv.compile(fullSchema)
-  // let moduleCode = standaloneCode(ajv, validate)
+deref(mySchema, function(err, fullSchema) {
+  console.log(fullSchema)
+  const ajv = new Ajv({code: {source: true}, strict: "log"})
+  addFormats(ajv)
+  const validate = ajv.compile(fullSchema)
+  let moduleCode = standaloneCode(ajv, validate)
 
   // Now you can write the module code to file
-  // fs.writeFileSync(path.join(__dirname, "./wra_datamodel.js"), moduleCode)
-// })
+  fs.writeFileSync(path.join(__dirname, "./wra_datamodel.js"), moduleCode)
+})
