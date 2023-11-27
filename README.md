@@ -4,7 +4,8 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-React component to render IEA Task 43 mast data.
+React component to render IEA Task 43 mast data. This project is derived from the
+IEA43 WRA schema found [here](https://github.com/IEA-Task-43/digital_wra_data_standard).
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
@@ -18,6 +19,9 @@ React component to render IEA Task 43 mast data.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Compile JSON Schema using AJV
+
+**Note that the schema cannot currently be 
+
 Validation of JSON against JSON Schema is completed using [AJV](https://ajv.js.org/). For
 efficiency and simplicity the WRA schema is precomplied using the approach described below.
 This approach seems reasonable since it is expected that the WRA schema will be updated 
